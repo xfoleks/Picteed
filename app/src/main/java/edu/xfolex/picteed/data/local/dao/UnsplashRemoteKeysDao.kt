@@ -1,10 +1,12 @@
 package edu.xfolex.picteed.data.local.dao
 
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import edu.xfolex.picteed.models.UnsplashRemoteKeys
 
+@Dao
 interface UnsplashRemoteKeysDao {
 
     @Query("SELECT * FROM unsplash_remote_keys_table WHERE id =:id")
