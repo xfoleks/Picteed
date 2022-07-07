@@ -9,6 +9,7 @@ import androidx.navigation.NavHostController
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.compose.collectAsLazyPagingItems
 import coil.annotation.ExperimentalCoilApi
+import edu.xfolex.picteed.navigation.Screen
 import edu.xfolex.picteed.screens.common.ListContent
 import edu.xfolex.picteed.screens.home.viewmodel.HomeViewModel
 
@@ -27,6 +28,7 @@ fun HomeScreen(
         topBar = {
             HomeTopBar(
                 onSearchClicked = {
+                    navController.navigate(Screen.Search.route)
                 }
             )
         },
