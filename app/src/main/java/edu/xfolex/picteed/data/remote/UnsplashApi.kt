@@ -1,6 +1,7 @@
 package edu.xfolex.picteed.data.remote
 
 import edu.xfolex.picteed.BuildConfig
+import edu.xfolex.picteed.models.SearchResult
 import edu.xfolex.picteed.models.UnsplashImage
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -14,4 +15,11 @@ interface UnsplashApi {
         @Query("page") page: Int,
         @Query("per_page") perPage: Int
     ) : List<UnsplashImage>
+
+    @Headers("Authorization: Client-ID ${BuildConfig.API_KEY}")
+    @GET("/search/photos")
+    suspend fun searchImages(
+        @Query("query") query: String,
+        @Query("per_page") perPage: Int
+    ): SearchResult
 }
